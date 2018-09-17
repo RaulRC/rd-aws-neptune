@@ -1,0 +1,18 @@
+sudo yum install java-1.8.0-devel
+sudo /usr/sbin/alternatives --config java # Select Java 1.8
+wget http://ftp.acc.umu.se/mirror/eclipse.org/rdf4j/eclipse-rdf4j-2.4.0-M3-sdk.zip
+unzip eclipse-rdf4j-2.4.0-M3-sdk.zip
+cd eclipse-rdf4j-2.4.0-M3/bin/
+./console.sh
+
+#>create sparql
+#SPARQL query endpoint: http://<your-neptune-endpoint>:8182/sparql
+#SPARQL update endpoint: http://<your-neptune-endpoint>:8182/sparql
+#Local repository ID [endpoint@localhost]: neptune
+#Repository title [SPARQL endpoint repository @localhost]: AWS Neptune instance
+
+#>open neptune
+#neptune> sparql select ?s ?p ?o where {?s ?p ?o}
+
+#Try with some real data
+curl -O http://rdf.geospecies.org/geospecies.rdf.gz
